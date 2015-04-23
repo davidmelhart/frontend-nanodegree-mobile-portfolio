@@ -7,6 +7,16 @@
     <meta name="author" content=" FILL ME IN ">
     <title>Cameron Pittman: Portfolio</title>
 
+    <!-- Moved parser blocking script above the css, so it won't block on the CCSOM -->
+    <script>
+      (function(w,g){w['GoogleAnalyticsObject']=g;
+      w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
+
+      // TODO: replace with your Google Analytics profile ID.
+      ga('create', 'UA-XXXX-Y');
+      ga('send', 'pageview');
+    </script>
+
     <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 
@@ -17,14 +27,6 @@
     <!-- Moving the media query for mobile landscape view to a separate stylesheet so it won't be included in the CRP -->
     <link href="css/portrait.css" rel="stylesheet" media="orientation:landscape">
 
-    <script>
-      (function(w,g){w['GoogleAnalyticsObject']=g;
-      w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
-
-      // TODO: replace with your Google Analytics profile ID.
-      ga('create', 'UA-XXXX-Y');
-      ga('send', 'pageview');
-    </script>
     <!-- Setting analytics.js to be asynchronous with the CRP -->
     <script async src="http://www.google-analytics.com/analytics.js"></script>
     <script async src="js/perfmatters.js"></script>
