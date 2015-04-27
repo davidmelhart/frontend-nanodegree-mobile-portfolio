@@ -422,38 +422,29 @@ var resizePizzas = function(size) {
   changeSliderLabel(size);
 
   // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
-  function determineDx (elem, size) {
-    var oldwidth = elem.offsetWidth;
-    var windowwidth = document.querySelector("#randomPizzas").offsetWidth;
-    var oldsize = oldwidth / windowwidth;
 
-    // TODO: change to 3 sizes? no more xl?
-    // Changes the slider value to a percent width
-    function sizeSwitcher (size) {
-      switch(size) {
-        case "1":
-          return 0.25;
-        case "2":
-          return 0.3333;
-        case "3":
-          return 0.5;
-        default:
-          console.log("bug in sizeSwitcher");
-      }
-    }
-
-    var newsize = sizeSwitcher(size);
-    var dx = (newsize - oldsize) * windowwidth;
-
-    return dx;
-  }
+  // Cut out all the intricate calculations for a simpler method, discussed in the course.
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+    switch(size) {
+       case "1":
+          newwidth = 25;
+          break;
+        case "2":
+          newwidth = 33;
+          break;
+        case "3":
+          newwidth = 50;
+          break;
+    }
+    
+    // Moved selection of randomPizzaContainers outside of the loop preventing redundant code.
+    var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
+
+    for (var i = 0; i < randomPizzas.length; i++) {
+      // Also cut out the hard calcuations here
+      randomPizzas[i].style.width = newwidth + "%";
     }
   }
 
@@ -517,6 +508,7 @@ function updatePositions() {
   var pizzaLength = items.length;
 
   for (var i = 0; i < pizzaLength; i++) {
+    // Somehow using style.transform and translateX breaks the site, though I can't figure out why.
     items[i].style.left = items[i].basicLeft + 100 * phases[i % 5] + 'px';
     items[i].style.transform = "translateZ(0)";
   }
