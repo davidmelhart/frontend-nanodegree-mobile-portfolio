@@ -38,9 +38,8 @@ Number of Resources: 4 (The HTML, an inline JS of analytics and an inline CSS st
 Number of minimum CP length: 2.
 Total critical KB: 3,5 KB
 
-In addition to the sources that were touched upon in the course:
+In addition to the sources that were touched upon in the course: <br>
 http://stackoverflow.com/questions/19374843/css-delivery-optimization-how-to-defer-css-loading
------------------------------------------------------------------------------------------------------------------
 
 ##Pizza.html
 
