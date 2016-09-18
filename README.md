@@ -1,5 +1,5 @@
 ##Udacity - Front End Nanodegree - Website Optimization
-
+**Try the page at: http://www.davidmelhart.com/portfolio/optimisation/**
 ##Index.html
 
 Initally the DOM Content Loading time is around 60-70msec and it takes an addional 60-70msec to the onload event to fire.
